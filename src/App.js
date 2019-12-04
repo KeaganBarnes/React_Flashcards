@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { Container, Header, Button, Icon, Segment } from 'semantic-ui-react';
 import Flashcards from './Flashcards';
 import FlashcardForm from './FlashcardForm';
@@ -22,8 +21,8 @@ class App extends React.Component {
 
   addFlashcard = ({question, answer}) => {
     let flashcard = { id: this.getId(), question, answer };
-    this.setState({ flashcards: [flashcard, ...this.state.flashcards], })
-  }
+    this.setState({ flashcards: [flashcard, ...this.state.flashcards], });
+  };
 
   removeFlashcard = (id) => {
     const flashcards = this.state.flashcards.filter( flashcard => {
@@ -32,6 +31,7 @@ class App extends React.Component {
     })
     this.setState({ flashcards: [...flashcards], })
   }
+
 
   toggleForm = () => this.setState({ showForm: !this.state.showForm, });
 
