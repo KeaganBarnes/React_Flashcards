@@ -12,6 +12,7 @@ class App extends React.Component {
       {id: 4, question: "Who started 'That's What She Said?'", answer: "Michael Scott" },
     ],
     showForm: true, 
+    showAnswer: true,
 
   }
 
@@ -32,6 +33,10 @@ class App extends React.Component {
     this.setState({ flashcards: [...flashcards], })
   }
 
+  // This is where I tried to create my function to view the answer after clicking
+  // viewAnswer = (id) => {
+  //   toggleAnswer = () => this.setState({ showAnswer: !this.state.showAnswer, })
+  // }
 
   toggleForm = () => this.setState({ showForm: !this.state.showForm, });
 
@@ -40,8 +45,8 @@ class App extends React.Component {
     return(
       <div>
         <Container style={{ paddingTop: "25px" }}>
-          <Header> React Flash Cards </Header>
-          <br />
+          <center> <Header size="huge"> React Flash Cards </Header> </center>
+          
           <Segment>
             <Button icon color="purple" onClick={this.toggleForm} >
               <Icon name={this.state.showForm ? "angle double up" : "angle double down"} /> 

@@ -9,7 +9,7 @@ const Flashcards = ({ flashcards, removeFlashcard }) => (
       <Table.Row>
         <Table.HeaderCell> Question </Table.HeaderCell>
         <Table.HeaderCell> Answer </Table.HeaderCell>
-        <Table.HeaderCell> View Answer </Table.HeaderCell>
+        <Table.HeaderCell> View Answer </Table.HeaderCell> 
         <Table.HeaderCell> Delete </Table.HeaderCell>
       </Table.Row>
     </Table.Header>

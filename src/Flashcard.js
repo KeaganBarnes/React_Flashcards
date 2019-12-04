@@ -8,7 +8,10 @@ const Flashcard = ({ id, question, answer, removeFlashcard, }) => (
       <Table.Cell> { question } </Table.Cell>
       <Table.Cell> { answer } </Table.Cell>
       <Table.Cell> 
-        <Button inverted color="green">
+      {/* I want this button to displat the answer */}
+      {/* tried putting the following function after "green" -- 
+        onClick={() => viewAnswer(id)} */}
+        <Button inverted color="green"> 
             View answer
         </Button>
       </Table.Cell>
