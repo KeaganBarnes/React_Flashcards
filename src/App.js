@@ -25,6 +25,15 @@ class App extends React.Component {
     this.setState({ flashcards: [flashcard, ...this.state.flashcards], });
   };
 
+  editFlashcard = (newFlashcard) => {
+    const flashcards = this.state.flashcards.map( originalFlashcard => {
+      if (originalFlashcard.id === newFlashcard.id)
+        return newFlashcard;
+      return originalFlashcard
+    })
+    this.setState({ flashcards, })
+  }
+ 
   removeFlashcard = (id) => {
     const flashcards = this.state.flashcards.filter( flashcard => {
       if (flashcard.id !== id)
@@ -35,7 +44,7 @@ class App extends React.Component {
 
   // This is where I tried to create my function to view the answer after clicking
   // viewAnswer = (id) => {
-  //   toggleAnswer = () => this.setState({ showAnswer: !this.state.showAnswer, })
+  // toggleAnswer = () => this.setState({ showAnswer: !this.state.showAnswer, })
   // }
 
   toggleForm = () => this.setState({ showForm: !this.state.showForm, });

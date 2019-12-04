@@ -1,27 +1,15 @@
 import React from 'react';
-import { Table } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 import Flashcard from './Flashcard';
 
-const Flashcards = ({ flashcards, removeFlashcard }) => (
-     
-  <Table celled padded>
-    <Table.Header>
-      <Table.Row>
-        <Table.HeaderCell> Question </Table.HeaderCell>
-        <Table.HeaderCell> Answer </Table.HeaderCell>
-        <Table.HeaderCell> View Answer </Table.HeaderCell> 
-        <Table.HeaderCell> Delete </Table.HeaderCell>
-      </Table.Row>
-    </Table.Header>
-    
-    <Table.Body>
+const Flashcards = ({ flashcards, removeFlashcard, editFlashcard }) => (
+        <Card.Group itemsPerRow={3}>
       {
         flashcards.map( flashcard => (
-          <Flashcard key={flashcard.id} {...flashcard} removeFlashcard={removeFlashcard}/>
+          <Flashcard key={flashcard.id} {...flashcard} removeFlashcard={removeFlashcard} editFlashcard={editFlashcard} />
         ))
       }
-    </Table.Body>
-  </Table>
-)
+    </Card.Group>
+  );
 
 export default Flashcards;

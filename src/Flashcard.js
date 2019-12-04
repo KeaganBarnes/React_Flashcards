@@ -1,27 +1,41 @@
 import React from 'react';
-import { Table, Button } from 'semantic-ui-react';
+import FlashcardForm from './FlashcardForm';
+import { Card, Button } from 'semantic-ui-react';
 
-const Flashcard = ({ id, question, answer, removeFlashcard, }) => (
+class Flashcard extends React.Component {
+  state = { editing: false, showAnswer: false}
+  toggleAnswer = (id) => this.setState({ showAnswer: !this.state.showAnswer, })
 
-  
-    <Table.Row>
-      <Table.Cell> { question } </Table.Cell>
-      <Table.Cell> { answer } </Table.Cell>
-      <Table.Cell> 
-      {/* I want this button to displat the answer */}
-      {/* tried putting the following function after "green" -- 
-        onClick={() => viewAnswer(id)} */}
-        <Button inverted color="green"> 
-            View answer
-        </Button>
-      </Table.Cell>
-      <Table.Cell> 
-        <Button color="red" onClick={() => removeFlashcard(id)}>
-           Delete
-        </Button >
-      </Table.Cell>
-    </Table.Row>
-  )
-  
+  toggleEdit = () => this.setState({ editing: !this.state.editing, })
+
+  render() {
+    const { id, question, answer, removeFlashcard, } = this.props;
+    const content = this.state.showAnswer ? ( answer ) : null
+    return(
+      <Card>
+        {
+          this.state.editing ?
+            <FlashcardForm question={question} answer={answer} id={id} editFlashcard={this.props.editFlashcard} />
+            :
+            <>
+              <Card.Content header={question} />
+              <Card.Content description={content} />
+            </>
+        }
+        <Card.Content extra>
+          <Button inverted color="green" onClick={this.toggleAnswer}> 
+            View Answer
+          </Button>
+          <Button color="blue" onClick={this.toggleEdit}>
+            Edit
+          </Button>
+          <Button color="red" onClick={() => removeFlashcard(id)}>
+            Delete
+          </Button >
+        </Card.Content>
+      </Card>
+    )
+  }
+}
+
   export default Flashcard;
-

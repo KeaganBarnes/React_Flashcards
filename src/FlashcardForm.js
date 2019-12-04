@@ -25,7 +25,7 @@ class FlashcardForm extends React.Component {
           fluid
           required
           label="Question"
-          placeholder="Type Your Question Here..."
+          placeholder="Type The Question Here..."
           name="question"
           value={question}
           onChange={this.handleChange}
