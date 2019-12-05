@@ -1,5 +1,5 @@
 import React from 'react';
-import FlashcardForm from './FlashcardForm';
+import EditFlashcardForm from './EditFlashcardForm'; 
 import { Card, Button } from 'semantic-ui-react';
 
 class Flashcard extends React.Component {
@@ -9,13 +9,14 @@ class Flashcard extends React.Component {
   toggleEdit = () => this.setState({ editing: !this.state.editing, })
 
   render() {
-    const { id, question, answer, removeFlashcard, } = this.props;
+    const { id, question, answer, removeFlashcard, editFlashcard } = this.props;
     const content = this.state.showAnswer ? ( answer ) : null
+    // const edit = this.state.editFlashcard 
     return(
       <Card>
         {
           this.state.editing ?
-            <FlashcardForm question={question} answer={answer} id={id} editFlashcard={this.props.editFlashcard} />
+            <EditFlashcardForm question={question} answer={answer} id={id} editFlashcard={editFlashcard} />
             :
             <>
               <Card.Content header={question} />
@@ -35,7 +36,7 @@ class Flashcard extends React.Component {
         </Card.Content>
       </Card>
     )
-  }
+  } 
 }
 
   export default Flashcard;

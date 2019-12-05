@@ -63,7 +63,7 @@ class App extends React.Component {
           {this.state.showForm ? <FlashcardForm addFlashcard={this.addFlashcard} /> : null }
           </Segment>
           <br />
-          <Flashcards flashcards={flashcards} removeFlashcard={this.removeFlashcard} />
+          <Flashcards flashcards={flashcards} removeFlashcard={this.removeFlashcard} editFlashcard={this.editFlashcard} />
         </Container>
       </div>
     )
