@@ -10,6 +10,12 @@ class Home extends React.Component {
       {id: 2, question: "What is the number for 911?", answer: "911" },
       {id: 3, question: "How did Randy Rhoades die?", answer: "Plane Crash" },
       {id: 4, question: "Who started 'That's What She Said?'", answer: "Michael Scott" },
+      {id: 5, question: "Who's a good boy?", answer: "Jeebus" },
+      {id: 6, question: "Who is the lead singer for Led Zeppelin", answer: "Robert Plant" },
+      {id: 7, question: "Who is the Prince of Darkness", answer: "Ozzy Osbourne" },
+      {id: 8, question: "Is it time for bed?", answer: "Yes" },
+
+      
     ],
     showForm: true, 
     showAnswer: true,
@@ -54,7 +60,7 @@ class Home extends React.Component {
           <center> <Header size="huge"> React Flash Cards </Header> </center>
           
           <Segment>
-            <Button icon color="purple" onClick={this.toggleForm} >
+            <Button icon color="linkedin" onClick={this.toggleForm} >
               <Icon name={this.state.showForm ? "angle double up" : "angle double down"} /> 
             </Button>
           {this.state.showForm ? <FlashcardForm addFlashcard={this.addFlashcard} /> : null }

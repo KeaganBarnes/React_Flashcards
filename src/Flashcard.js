@@ -26,7 +26,7 @@ class Flashcard extends React.Component {
         <Card.Content extra>
           <center>
             <div class="ui three buttons">
-              <Button color="blue" onClick={this.toggleEdit}>
+              <Button color="linkedin" onClick={this.toggleEdit}>
                 <center>
                   <Icon name="pencil" />
                 </center>
