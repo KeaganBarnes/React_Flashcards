@@ -3,7 +3,7 @@ import { Card } from "semantic-ui-react";
 import Flashcard from './Flashcard';
 
 const Flashcards = ({ flashcards, removeFlashcard, editFlashcard }) => (
-        <Card.Group itemsPerRow={3}>
+        <Card.Group itemsPerRow={4}>
       {
         flashcards.map( flashcard => (
           <Flashcard key={flashcard.id} {...flashcard} removeFlashcard={removeFlashcard} editFlashcard={editFlashcard} />
